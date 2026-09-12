@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For You</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+    <script>
+        emailjs.init({
+            publicKey: "lI3eJDAxrPeaVCMAN"
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="background"></div>
+
+    <div id="overlay"></div>
+
+    <main class="scene">
+
+        <div id="content">
+
+            <img id="sceneImage" class="scene-image">
+
+            <div id="text"></div>
+
+            <div id="key"></div>
+
+            <div id="choices" class="hidden">
+                <button id="yesBtn">YES</button>
+                <button id="notYetBtn">NOT YET</button>
+            </div>
+
+            <div id="formArea" class="hidden"></div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

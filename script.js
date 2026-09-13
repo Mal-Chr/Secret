@@ -572,3 +572,30 @@ ${answer2}
 ========================= */
 
 showScene();
+
+/* =========================
+   FULLSCREEN
+========================= */
+
+const fullscreenGate =
+    document.getElementById("fullscreenGate");
+
+const enterFullscreen =
+    document.getElementById("enterFullscreen");
+
+
+enterFullscreen.addEventListener("click", async () => {
+
+    try {
+
+        await document.documentElement.requestFullscreen();
+
+    } catch (error) {
+
+        console.error("FULLSCREEN ERROR:", error);
+
+    }
+
+    fullscreenGate.classList.add("hidden");
+
+});

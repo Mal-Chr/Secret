@@ -585,17 +585,13 @@ const enterFullscreen =
 
 
 enterFullscreen.addEventListener("click", async () => {
-
     try {
-
         await document.documentElement.requestFullscreen();
 
+        if (document.fullscreenElement) {
+            fullscreenGate.classList.add("hidden");
+        }
     } catch (error) {
-
         console.error("FULLSCREEN ERROR:", error);
-
     }
-
-    fullscreenGate.classList.add("hidden");
-
 });

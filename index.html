@@ -8,8 +8,9 @@
     <title>Test</title>
 
     <link rel="stylesheet" href="style.css">
+
     <script
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
 
     <script>
@@ -21,19 +22,35 @@
 
 <body>
 
-    <body>
+    <!-- =========================
+         FULLSCREEN GATE
+    ========================= -->
 
     <div id="fullscreenGate">
-        <button id="enterFullscreen">
+
+        <p id="fullscreenInstruction">
+            press [ E ] to continue
+        </p>
+
+        <button id="enterFullscreen" disabled>
             ENTER FULLSCREEN
         </button>
+
     </div>
+
+
+    <!-- =========================
+         BACKGROUND
+    ========================= -->
 
     <div id="background"></div>
 
     <div id="overlay"></div>
 
-    <!-- sisanya tetap sama -->
+
+    <!-- =========================
+         SCENE
+    ========================= -->
 
     <main class="scene">
 
@@ -46,8 +63,15 @@
             <div id="key"></div>
 
             <div id="choices" class="hidden">
-                <button id="yesBtn">YES</button>
-                <button id="notYetBtn">NOT YET</button>
+
+                <button id="yesBtn">
+                    YES
+                </button>
+
+                <button id="notYetBtn">
+                    NOT YET
+                </button>
+
             </div>
 
             <div id="formArea" class="hidden"></div>
@@ -55,6 +79,7 @@
         </div>
 
     </main>
+
 
     <script src="script.js"></script>
 

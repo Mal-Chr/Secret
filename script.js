@@ -168,20 +168,32 @@ let currentScene = 0;
    ELEMENT
 ========================= */
 
-const background = document.getElementById("background");
+const background =
+    document.getElementById("background");
 
-const content = document.getElementById("content");
+const content =
+    document.getElementById("content");
 
-const text = document.getElementById("text");
-const key = document.getElementById("key");
+const text =
+    document.getElementById("text");
 
-const choices = document.getElementById("choices");
-const formArea = document.getElementById("formArea");
+const key =
+    document.getElementById("key");
 
-const yesBtn = document.getElementById("yesBtn");
-const notYetBtn = document.getElementById("notYetBtn");
+const choices =
+    document.getElementById("choices");
 
-const sceneImage = document.getElementById("sceneImage");
+const formArea =
+    document.getElementById("formArea");
+
+const yesBtn =
+    document.getElementById("yesBtn");
+
+const notYetBtn =
+    document.getElementById("notYetBtn");
+
+const sceneImage =
+    document.getElementById("sceneImage");
 
 
 /* =========================
@@ -199,25 +211,32 @@ function showScene() {
 
     const scene = scenes[currentScene];
 
+
     text.textContent = scene.text;
 
-    text.className = scene.textClass || "";
-    key.className = scene.keyClass || "";
+
+    text.className =
+        scene.textClass || "";
+
+    key.className =
+        scene.keyClass || "";
 
 
     if (scene.image) {
 
-        sceneImage.src = scene.image;
+        sceneImage.src =
+            scene.image;
 
         sceneImage.className =
             `scene-image ${scene.imageClass || ""}`;
 
-        sceneImage.style.display = "block";
+        sceneImage.style.display =
+            "block";
 
     } else {
 
-        sceneImage.style.display = "none";
-
+        sceneImage.style.display =
+            "none";
     }
 
 
@@ -226,8 +245,8 @@ function showScene() {
         background.style.backgroundImage =
             `url("${scene.background}")`;
 
-        currentBackground = scene.background;
-
+        currentBackground =
+            scene.background;
     }
 
 
@@ -243,7 +262,6 @@ function showScene() {
         key.textContent = "";
 
         choices.classList.remove("hidden");
-
     }
 
 }
@@ -255,10 +273,14 @@ function showScene() {
 
 function nextScene() {
 
-    const nextSceneIndex = currentScene + 1;
+    const nextSceneIndex =
+        currentScene + 1;
+
 
     const nextBackground =
-        scenes[nextSceneIndex]?.background || currentBackground;
+        scenes[nextSceneIndex]?.background ||
+        currentBackground;
+
 
     const backgroundIsChanging =
         currentBackground !== nextBackground;
@@ -276,8 +298,10 @@ function nextScene() {
 
         currentScene++;
 
+
         if (currentScene >= scenes.length) {
-            currentScene = scenes.length - 1;
+            currentScene =
+                scenes.length - 1;
         }
 
 
@@ -301,7 +325,7 @@ function nextScene() {
 
 
 /* =========================
-   KEYBOARD
+   KEYBOARD SCENE
 ========================= */
 
 document.addEventListener("keydown", (event) => {
@@ -314,11 +338,13 @@ document.addEventListener("keydown", (event) => {
     const pressedKey =
         event.key.toLowerCase();
 
+
     const requiredKey =
         scenes[currentScene].key;
 
 
     if (pressedKey === requiredKey) {
+
         nextScene();
     }
 
@@ -337,20 +363,17 @@ function openForm(formContent, callback) {
     setTimeout(() => {
 
         text.textContent = "";
+
         key.textContent = "";
 
         choices.classList.add("hidden");
 
 
-        formArea.innerHTML = formContent;
+        formArea.innerHTML =
+            formContent;
 
         formArea.classList.remove("hidden");
 
-
-        /*
-         * FORM SUDAH ADA DI DOM
-         * BARU CALLBACK DIJALANKAN
-         */
 
         if (callback) {
             callback();
@@ -382,7 +405,8 @@ yesBtn.addEventListener("click", () => {
             what do you feel about us?
         </label>
 
-        <textarea id="yesAnswer1"
+        <textarea
+            id="yesAnswer1"
             placeholder="tell me honestly... (justt use indoo)"
         ></textarea>
 
@@ -391,7 +415,8 @@ yesBtn.addEventListener("click", () => {
             what do you want us to become from now on?
         </label>
 
-        <textarea id="yesAnswer2"
+        <textarea
+            id="yesAnswer2"
             placeholder="your answer..."
         ></textarea>
 
@@ -400,7 +425,8 @@ yesBtn.addEventListener("click", () => {
             is there anything you want me to know?
         </label>
 
-        <textarea id="yesAnswer3"
+        <textarea
+            id="yesAnswer3"
             placeholder="anything..."
         ></textarea>
 
@@ -420,8 +446,10 @@ yesBtn.addEventListener("click", () => {
             const answer1 =
                 document.getElementById("yesAnswer1").value;
 
+
             const answer2 =
                 document.getElementById("yesAnswer2").value;
+
 
             const answer3 =
                 document.getElementById("yesAnswer3").value;
@@ -453,7 +481,9 @@ ${answer3}
                 }
             ).then(() => {
 
-                alert("sent successfully 💌");
+                alert(
+                    "sent successfully 💌"
+                );
 
             }).catch((error) => {
 
@@ -461,6 +491,7 @@ ${answer3}
                     "EMAILJS ERROR:",
                     error
                 );
+
 
                 alert(
                     "FAILED 😭\n\n" +
@@ -490,7 +521,8 @@ notYetBtn.addEventListener("click", () => {
             what makes you feel like you're not ready yet?
         </label>
 
-        <textarea id="notYetAnswer1"
+        <textarea
+            id="notYetAnswer1"
             placeholder="you can be completely honest with me... (justt use indoo)"
         ></textarea>
 
@@ -499,7 +531,8 @@ notYetBtn.addEventListener("click", () => {
             is there anything you need from me?
         </label>
 
-        <textarea id="notYetAnswer2"
+        <textarea
+            id="notYetAnswer2"
             placeholder="tell me..."
         ></textarea>
 
@@ -517,10 +550,15 @@ notYetBtn.addEventListener("click", () => {
         submitNotYet.addEventListener("click", () => {
 
             const answer1 =
-                document.getElementById("notYetAnswer1").value;
+                document.getElementById(
+                    "notYetAnswer1"
+                ).value;
+
 
             const answer2 =
-                document.getElementById("notYetAnswer2").value;
+                document.getElementById(
+                    "notYetAnswer2"
+                ).value;
 
 
             const message = `
@@ -544,7 +582,9 @@ ${answer2}
                 }
             ).then(() => {
 
-                alert("sent successfully 💌");
+                alert(
+                    "sent successfully 💌"
+                );
 
             }).catch((error) => {
 
@@ -552,6 +592,7 @@ ${answer2}
                     "EMAILJS ERROR:",
                     error
                 );
+
 
                 alert(
                     "FAILED 😭\n\n" +
@@ -573,25 +614,108 @@ ${answer2}
 
 showScene();
 
+
 /* =========================
-   FULLSCREEN
+   FULLSCREEN GATE
 ========================= */
 
 const fullscreenGate =
-    document.getElementById("fullscreenGate");
+    document.getElementById(
+        "fullscreenGate"
+    );
 
 const enterFullscreen =
-    document.getElementById("enterFullscreen");
+    document.getElementById(
+        "enterFullscreen"
+    );
+
+const fullscreenInstruction =
+    document.getElementById(
+        "fullscreenInstruction"
+    );
 
 
-enterFullscreen.addEventListener("click", async () => {
-    try {
-        await document.documentElement.requestFullscreen();
+let keyboardUnlocked = false;
 
-        if (document.fullscreenElement) {
-            fullscreenGate.classList.add("hidden");
-        }
-    } catch (error) {
-        console.error("FULLSCREEN ERROR:", error);
+
+/* =========================
+   TEKAN E
+========================= */
+
+document.addEventListener("keydown", (event) => {
+
+    if (
+        event.key.toLowerCase() === "e" &&
+        !keyboardUnlocked
+    ) {
+
+        keyboardUnlocked = true;
+
+        enterFullscreen.disabled = false;
+
+        fullscreenInstruction.textContent =
+            "key accepted. now enter fullscreen.";
     }
+
 });
+
+
+/* =========================
+   ENTER FULLSCREEN
+========================= */
+
+enterFullscreen.addEventListener(
+    "click",
+    async () => {
+
+        if (!keyboardUnlocked) {
+            return;
+        }
+
+
+        try {
+
+            await document.documentElement.requestFullscreen();
+
+
+            if (document.fullscreenElement) {
+
+                fullscreenGate.classList.add(
+                    "hidden"
+                );
+
+            }
+
+        } catch (error) {
+
+            console.error(
+                "FULLSCREEN ERROR:",
+                error
+            );
+
+            fullscreenInstruction.textContent =
+                "fullscreen failed. please try again.";
+        }
+
+    }
+);
+
+
+/* =========================
+   KALAU KELUAR FULLSCREEN
+========================= */
+
+document.addEventListener(
+    "fullscreenchange",
+    () => {
+
+        if (!document.fullscreenElement) {
+
+            fullscreenGate.classList.remove(
+                "hidden"
+            );
+
+        }
+
+    }
+);

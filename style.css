@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     width: 100%;
     height: 100vh;
@@ -25,14 +26,23 @@ body {
 .scene-image {
     width: 280px;
     max-width: 80%;
-    padding: 8px;
-    background: white;
-    border-radius: 4px;
-    display: block;
-    margin: 20px auto;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 
-    transition: opacity 0.5s ease, filter 0.5s ease;
+    padding: 8px;
+
+    background: white;
+
+    border-radius: 4px;
+
+    display: block;
+
+    margin: 20px auto;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+
+    transition:
+        opacity 0.5s ease,
+        filter 0.5s ease;
 }
 
 
@@ -43,9 +53,11 @@ body {
 #background {
     position: fixed;
     inset: 0;
+
     z-index: -2;
 
     background-color: black;
+
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -57,6 +69,7 @@ body {
         opacity 0.7s ease,
         filter 0.7s ease;
 }
+
 
 #background.hide {
     opacity: 0;
@@ -71,6 +84,7 @@ body {
 #overlay {
     position: fixed;
     inset: 0;
+
     z-index: -1;
 }
 
@@ -84,6 +98,7 @@ body {
     height: 100vh;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -97,6 +112,7 @@ body {
 
 #content {
     display: flex;
+
     flex-direction: column;
     align-items: center;
 
@@ -115,9 +131,12 @@ body {
         transform 0.7s ease;
 }
 
+
 #content.hide {
     opacity: 0;
+
     filter: blur(20px);
+
     transform: scale(0.98);
 }
 
@@ -130,11 +149,13 @@ body {
     max-width: 800px;
 
     font-size: 32px;
+
     line-height: 1.4;
 
     text-align: center;
 
-    text-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+    text-shadow:
+        0 0 25px rgba(255, 255, 255, 0.5);
 }
 
 
@@ -146,9 +167,11 @@ body {
     color: pink;
 }
 
+
 .text-blue {
     color: lightblue;
 }
+
 
 .text-white {
     color: white;
@@ -176,9 +199,11 @@ body {
     color: pink;
 }
 
+
 .key-blue {
     color: lightblue;
 }
+
 
 .key-white {
     color: white;
@@ -191,22 +216,28 @@ body {
 
 #choices {
     display: flex;
+
     justify-content: center;
+
     gap: 20px;
 
     margin-top: 35px;
 }
 
+
 button {
     padding: 11px 28px;
 
     background: rgb(0, 0, 0);
+
     color: white;
 
     border: 1px solid rgb(0, 94, 255);
 
     font-family: inherit;
+
     font-size: 16px;
+
     font-style: italic;
 
     cursor: pointer;
@@ -218,10 +249,14 @@ button {
         transform 0.25s ease;
 }
 
+
 button:hover {
     background-color: rgb(246, 247, 248);
+
     color: rgb(0, 102, 255);
+
     border: 1px solid rgb(0, 0, 0);
+
     transform: scale(1.05);
 }
 
@@ -232,22 +267,7 @@ button:hover {
 
 #formArea {
     color: rgb(21, 128, 252);
-}
 
-#formArea textarea {
-    color: rgb(21, 128, 252);
-}
-
-#formArea textarea::placeholder {
-    color: rgb(21, 128, 252);
-    opacity: 0.6;
-}
-
-#formArea button {
-    color: rgb(21, 128, 252);
-}
-
-#formArea {
     width: 100%;
     max-width: 500px;
 
@@ -256,12 +276,15 @@ button:hover {
     text-align: left;
 }
 
+
 #formArea h2 {
     margin-bottom: 25px;
 
     text-align: center;
+
     font-size: 28px;
 }
+
 
 #formArea label {
     display: block;
@@ -272,8 +295,10 @@ button:hover {
     font-size: 17px;
 }
 
+
 #formArea textarea {
     width: 100%;
+
     min-height: 80px;
 
     padding: 10px;
@@ -281,25 +306,39 @@ button:hover {
     resize: none;
 
     background: rgb(0, 0, 0);
-    color: white;
+
+    color: rgb(21, 128, 252);
 
     border: 1px solid rgb(0, 157, 255);
 
     font-family: inherit;
+
     font-size: 15px;
+
     font-style: italic;
 
     outline: none;
 }
 
+
 #formArea textarea:focus {
     border-color: white;
 }
+
+
+#formArea textarea::placeholder {
+    color: rgb(21, 128, 252);
+
+    opacity: 0.6;
+}
+
 
 #formArea button {
     display: block;
 
     margin: 25px auto 0;
+
+    color: rgb(21, 128, 252);
 }
 
 
@@ -322,16 +361,20 @@ button:hover {
         font-size: 25px;
     }
 
+
     #formArea {
         max-width: 100%;
     }
+
 
     #choices {
         gap: 12px;
     }
 
+
     button {
         padding: 10px 20px;
+
         font-size: 14px;
     }
 
@@ -345,13 +388,15 @@ button:hover {
 .photo1 {
     width: 250px;
     height: 250px;
+
     object-fit: cover;
 
     clip-path: path(
         "M 125 230 C 110 215 20 160 20 80 C 20 20 90 10 125 60 C 160 10 230 20 230 80 C 230 160 140 215 125 230 Z"
     );
 
-    filter: drop-shadow(0 0 0 white);
+    filter:
+        drop-shadow(0 0 0 white);
 }
 
 
@@ -360,9 +405,11 @@ button:hover {
     height: auto;
 }
 
-.txt1{
+
+.txt1 {
     color: rgb(21, 128, 252);
 }
+
 
 /* =========================
    FULLSCREEN GATE
@@ -370,54 +417,89 @@ button:hover {
 
 #fullscreenGate {
     position: fixed;
+
     inset: 0;
+
     z-index: 9999;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
 
     padding: 25px;
+
     text-align: center;
 
     background: white;
+
     color: rgb(21, 128, 252);
 
     opacity: 1;
+
     visibility: visible;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
 }
+
 
 #fullscreenGate.hidden {
     opacity: 0;
+
     visibility: hidden;
+
     pointer-events: none;
 }
-#fullscreenGate h1 {
-    font-size: 32px;
-    margin-bottom: 15px;
+
+
+#fullscreenInstruction {
+    margin-bottom: 25px;
+
+    font-size: 18px;
 }
 
-#fullscreenGate p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
 
 #fullscreenGate button {
     background: white;
+
     color: rgb(21, 128, 252);
 
     border: 1px solid rgb(21, 128, 252);
 
     font-family: inherit;
+
     font-size: 16px;
+
     font-style: italic;
 
     padding: 12px 25px;
+
     cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        opacity 0.25s ease;
 }
 
-#fullscreenGate.hidden {
-    display: none;
+
+#fullscreenGate button:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+}
+
+
+#fullscreenGate button:not(:disabled):hover {
+    background-color: rgb(246, 247, 248);
+
+    color: rgb(0, 102, 255);
+
+    transform: scale(1.05);
 }

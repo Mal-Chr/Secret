@@ -379,13 +379,21 @@ button:hover {
     align-items: center;
 
     padding: 25px;
-
     text-align: center;
 
     background: white;
     color: rgb(21, 128, 252);
+
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
+#fullscreenGate.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
 #fullscreenGate h1 {
     font-size: 32px;
     margin-bottom: 15px;

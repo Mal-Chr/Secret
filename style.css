@@ -363,3 +363,53 @@ button:hover {
 .txt1{
     color: rgb(21, 128, 252);
 }
+
+/* =========================
+   FULLSCREEN GATE
+========================= */
+
+#fullscreenGate {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: white;
+    color: rgb(21, 128, 252);
+}
+
+#fullscreenGate h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+#fullscreenGate p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+#fullscreenGate button {
+    background: white;
+    color: rgb(21, 128, 252);
+
+    border: 1px solid rgb(21, 128, 252);
+
+    font-family: inherit;
+    font-size: 16px;
+    font-style: italic;
+
+    padding: 12px 25px;
+    cursor: pointer;
+}
+
+#fullscreenGate.hidden {
+    display: none;
+}
